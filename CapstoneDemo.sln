@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneDemo.Server", "CapstoneDemo\Server\CapstoneDemo.Server.csproj", "{C552F015-F7D2-4C02-AFBF-CC1E74DDB81A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapstoneDemo.Shared", "CapstoneDemo\Shared\CapstoneDemo.Shared.csproj", "{8FDBB63A-EB74-4471-9A16-FCD96A6B3744}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneDemo.Client", "CapstoneDemo\Client\CapstoneDemo.Client.csproj", "{8D735009-47D0-4189-8967-DC930FFBCCF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapstoneDemo.WinformsClient", "CapstoneDemo.WinformsClient\CapstoneDemo.WinformsClient.csproj", "{872B8097-48EF-470E-8785-1F054CAF771E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneDemo.Shared", "CapstoneDemo\Shared\CapstoneDemo.Shared.csproj", "{8FDBB63A-EB74-4471-9A16-FCD96A6B3744}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "WebApplication1\Server.csproj", "{19963FE7-562A-4B3B-858E-A3DFA436F1E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "WebApplication2\WebClient.csproj", "{43A641FF-58B3-405D-9F9B-E9762766DBD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C552F015-F7D2-4C02-AFBF-CC1E74DDB81A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C552F015-F7D2-4C02-AFBF-CC1E74DDB81A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C552F015-F7D2-4C02-AFBF-CC1E74DDB81A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C552F015-F7D2-4C02-AFBF-CC1E74DDB81A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D735009-47D0-4189-8967-DC930FFBCCF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D735009-47D0-4189-8967-DC930FFBCCF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D735009-47D0-4189-8967-DC930FFBCCF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D735009-47D0-4189-8967-DC930FFBCCF0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8FDBB63A-EB74-4471-9A16-FCD96A6B3744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8FDBB63A-EB74-4471-9A16-FCD96A6B3744}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FDBB63A-EB74-4471-9A16-FCD96A6B3744}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FDBB63A-EB74-4471-9A16-FCD96A6B3744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{872B8097-48EF-470E-8785-1F054CAF771E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{872B8097-48EF-470E-8785-1F054CAF771E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{872B8097-48EF-470E-8785-1F054CAF771E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{872B8097-48EF-470E-8785-1F054CAF771E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19963FE7-562A-4B3B-858E-A3DFA436F1E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19963FE7-562A-4B3B-858E-A3DFA436F1E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19963FE7-562A-4B3B-858E-A3DFA436F1E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19963FE7-562A-4B3B-858E-A3DFA436F1E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43A641FF-58B3-405D-9F9B-E9762766DBD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43A641FF-58B3-405D-9F9B-E9762766DBD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43A641FF-58B3-405D-9F9B-E9762766DBD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43A641FF-58B3-405D-9F9B-E9762766DBD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

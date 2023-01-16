@@ -1,7 +1,30 @@
 ﻿@page "/"
+@using CapstoneDemo.Shared
+@inject HttpClient Http
 
 <PageTitle>Index</PageTitle>
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
+
+<tbody>
+@foreach (var forecast in forecasts)
+{
+    <tr>
+        <td>@forecast.Date.ToShortDateString()</td>
+        <td>@forecast.TemperatureC</td>
+        <td>@forecast.TemperatureF</td>
+        <td>@forecast.Summary</td>
+    </tr>
+}
+</tbody>
+
+@code {
+    private WeatherForecast[]? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+    }
+}
