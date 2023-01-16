@@ -1,28 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Net.WebRequestMethods;
+using CapstoneDemo.Shared;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
 
-namespace WinformsClient
+namespace WinFormsClient
 {
     public partial class Form1 : Form
     {
+        private WeatherForecast[]? forecasts;
+
         public Form1()
         {
             InitializeComponent();
+            this.get();
         }
 
-        private WeatherForecast[]? forecasts;
-
-        protected override async Task OnInitializedAsync()
+        private void get()
         {
-            forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7113/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                this.forecasts = client.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast").Result;
+                this.label1.Text = "";
+                foreach (var forecast in this.forecasts)
+                {
+                    this.label1.Text += $"Forecast for: {forecast.Date} Summary: {forecast.Summary} Temp F: {forecast.TemperatureF} Temp C: {forecast.TemperatureC}\n";
+                }
+            }
         }
     }
 }
