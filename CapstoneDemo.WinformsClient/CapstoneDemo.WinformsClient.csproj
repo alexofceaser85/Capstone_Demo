@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CapstoneDemo\Shared\CapstoneDemo.Shared.csproj" />
-    <ProjectReference Include="..\WebApplication1\Server.csproj" />
+    <ProjectReference Include="..\WebApplication1\CapstoneDemo.Server.csproj" />
   </ItemGroup>
 
 </Project>

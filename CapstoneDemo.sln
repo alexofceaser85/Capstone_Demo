@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapstoneDemo.Shared", "Caps
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapstoneDemo.WinformsClient", "CapstoneDemo.WinformsClient\CapstoneDemo.WinformsClient.csproj", "{872B8097-48EF-470E-8785-1F054CAF771E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "WebApplication1\Server.csproj", "{19963FE7-562A-4B3B-858E-A3DFA436F1E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneDemo.Server", "WebApplication1\CapstoneDemo.Server.csproj", "{19963FE7-562A-4B3B-858E-A3DFA436F1E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "WebApplication2\WebClient.csproj", "{43A641FF-58B3-405D-9F9B-E9762766DBD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneDemo.WebClient", "WebApplication2\CapstoneDemo.WebClient.csproj", "{43A641FF-58B3-405D-9F9B-E9762766DBD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
