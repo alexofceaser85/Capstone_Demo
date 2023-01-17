@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient", "WebClient\WebC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{A4E872DF-FE0A-4F03-BCF4-C520038CEDC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsClient", "WinFormsClient\WinFormsClient.csproj", "{74CB23FE-EDCD-4C26-A570-FEBDC95C0898}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsClient", "WinFormsClient\WinFormsClient.csproj", "{74CB23FE-EDCD-4C26-A570-FEBDC95C0898}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{35E99C59-A4BF-4DAF-9E41-458BB7EC0DD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,12 @@ Global
 		{74CB23FE-EDCD-4C26-A570-FEBDC95C0898}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74CB23FE-EDCD-4C26-A570-FEBDC95C0898}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74CB23FE-EDCD-4C26-A570-FEBDC95C0898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35E99C59-A4BF-4DAF-9E41-458BB7EC0DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35E99C59-A4BF-4DAF-9E41-458BB7EC0DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35E99C59-A4BF-4DAF-9E41-458BB7EC0DD2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{35E99C59-A4BF-4DAF-9E41-458BB7EC0DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35E99C59-A4BF-4DAF-9E41-458BB7EC0DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35E99C59-A4BF-4DAF-9E41-458BB7EC0DD2}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

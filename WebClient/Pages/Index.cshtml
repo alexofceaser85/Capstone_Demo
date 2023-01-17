@@ -3,13 +3,14 @@
 @using System.Net.Http.Headers
 
 @{
-    WeatherForecast[] forecasts = null;
+    Grade[] grades = null;
     using (var client = new HttpClient())
     {
         client.BaseAddress = new Uri("https://localhost:7113/");
         client.DefaultRequestHeaders.Accept.Clear();
         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        forecasts = client.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast").Result;
+        var t = client.GetFromJsonAsync<object[]>("WeatherForecast").Result;
+        grades = client.GetFromJsonAsync<Grade[]>("WeatherForecast").Result;
     }
 }
 
@@ -19,7 +20,7 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 
-@if (forecasts == null)
+@if (grades == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -35,13 +36,13 @@ else
         </tr>
         </thead>
         <tbody>
-        @foreach (var forecast in forecasts)
+            @foreach (var grade in grades)
         {
             <tr>
-                <td>@forecast.Date.ToShortDateString()</td>
-                <td>@forecast.TemperatureC</td>
-                <td>@forecast.TemperatureF</td>
-                <td>@forecast.Summary</td>
+                <td>@grade.Id)</td>
+                <td>@grade.Name</td>
+                <td>@grade.Subject</td>
+                    <td>@grade.GradeAmount</td>
             </tr>
         }
         </tbody>
