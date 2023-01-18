@@ -1,18 +1,6 @@
 ﻿@page
-@using CapstoneDemo.Shared
-@using System.Net.Http.Headers
-
-@{
-    Grade[] grades = null;
-    using (var client = new HttpClient())
-    {
-        client.BaseAddress = new Uri("https://localhost:7113/");
-        client.DefaultRequestHeaders.Accept.Clear();
-        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        var t = client.GetFromJsonAsync<object[]>("WeatherForecast").Result;
-        grades = client.GetFromJsonAsync<Grade[]>("WeatherForecast").Result;
-    }
-}
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model WebClient.Service.GradesService
 
 <PageTitle>Weather forecast</PageTitle>
 
@@ -20,12 +8,41 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 
-@if (grades == null)
+
+@if (@Model.Grades == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
+    <div id="newGradeContainer">
+        <div>
+            <h2>Input New Grade</h2>
+            <hr/>
+        </div>
+        @using (Html.BeginForm())
+        {
+            <form method="post" id="gradeInputsContainer">
+                <fieldset>
+                    <div>
+                        <label>Name</label>
+                        <input id="gradeName" name="Name"/>
+                    </div>
+                    <div>
+                        <label>Subject</label>
+                        <input id="gradeSubject" name="Subject"/>
+                    </div>
+                    <div>
+                        <label>Value</label>
+                        <input id="gradeValue" name="GradeAmount"/>
+                    </div>
+                    <input id="newGradeSubmitButton" type="submit" value="Submit" asp-page-handler="Submit"/>
+                </fieldset>
+            </form>
+        }
+
+        <hr/>
+    </div>
     <table class="table">
         <thead>
         <tr>
@@ -36,13 +53,13 @@ else
         </tr>
         </thead>
         <tbody>
-            @foreach (var grade in grades)
+            @foreach (var grade in @Model.Grades)
         {
             <tr>
                 <td>@grade.Id)</td>
                 <td>@grade.Name</td>
                 <td>@grade.Subject</td>
-                    <td>@grade.GradeAmount</td>
+                <td>@grade.GradeAmount</td>
             </tr>
         }
         </tbody>

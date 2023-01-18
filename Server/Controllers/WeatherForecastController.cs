@@ -1,4 +1,5 @@
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using CapstoneDemo.Shared;
 using Microsoft.AspNetCore.Mvc;
@@ -50,6 +51,20 @@ namespace WebApplication1.Controllers
             }
 
             return grades;
+        }
+
+        [HttpPost(Name = "PostWeatherForecast")]
+        public bool Post(Grade gradeToAdd)
+        {
+            var query = "insert into Grades(Name, Subject, GradeAmount) VALUES (@name, @subject, @gradeAmount)";
+            using var connection = new System.Data.SqlClient.SqlConnection("Data Source=(localdb)\\projectmodels;Initial Catalog=Database;Integrated Security=True");
+            connection.Open();
+
+            using var command = new System.Data.SqlClient.SqlCommand(query, connection);
+            command.Parameters.Add("@name", SqlDbType.VarChar).Value = gradeToAdd.Name;
+            command.Parameters.Add("@subject", SqlDbType.VarChar).Value = gradeToAdd.Subject;
+            command.Parameters.Add("@gradeAmount", SqlDbType.Int).Value = gradeToAdd.GradeAmount;
+            return command.ExecuteNonQuery() > 0;
         }
     }
 }
