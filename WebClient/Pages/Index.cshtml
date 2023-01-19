@@ -1,6 +1,6 @@
 ﻿@page
 @using Microsoft.AspNetCore.Mvc.TagHelpers
-@model WebClient.Service.GradesService
+@model WebClient.ViewModel.GradesViewModel
 
 <PageTitle>Weather forecast</PageTitle>
 
@@ -9,7 +9,7 @@
 <p>This component demonstrates fetching data from the server.</p>
 
 
-@if (@Model.Grades == null)
+@if (@Model == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -53,7 +53,7 @@ else
         </tr>
         </thead>
         <tbody>
-            @foreach (var grade in @Model.Grades)
+            @foreach (var grade in @Model)
         {
             <tr>
                 <td>@grade.Id)</td>
