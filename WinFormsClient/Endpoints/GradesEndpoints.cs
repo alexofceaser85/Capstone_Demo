@@ -18,7 +18,7 @@ namespace WinFormsClient.Endpoints
                 client.BaseAddress = new Uri("https://localhost:7113/");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                return client.GetFromJsonAsync<Grade[]>("WeatherForecast").Result;
+                return client.GetFromJsonAsync<Grade[]>("Grades").Result;
             }
         }
 
@@ -30,7 +30,7 @@ namespace WinFormsClient.Endpoints
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 var grade = new CapstoneDemo.Shared.Grade(null, gradeToAdd.Name, gradeToAdd.Subject, gradeToAdd.GradeAmount);
-                var _ = client.PostAsJsonAsync("WeatherForecast", grade).Result;
+                var _ = client.PostAsJsonAsync("Grades", grade).Result;
             }
         }
     }
