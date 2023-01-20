@@ -19,7 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Server\Server.csproj" />
     <ProjectReference Include="..\Shared\Shared.csproj" />
+    <ProjectReference Include="..\WebClient\WebClient.csproj" />
     <ProjectReference Include="..\WinFormsClient\WinFormsClient.csproj" />
   </ItemGroup>
 
