@@ -1,0 +1,56 @@
+﻿@page "/grades"
+@using BlazorWinForms.ViewModel
+@using Microsoft.AspNetCore.Components.Forms
+@using System.Windows.Forms
+
+<h1>Grades</h1>
+<p>This component is for accessing grade data from the database, as well as inputting grades into the database.</p>
+
+@if (viewModel == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h2>Add Grade</h2>
+    <form id="gradeForm" method="post">
+        <input asp- id="nameInput" type="text" name="name" placeholder="Student Name">
+        <input id="courseInput" type="text" name="course" placeholder="Course">
+        <input id="gradeAmountInput" type="number" name="gradeAmount" placeholder="Grade">
+        <button class="btn btn-primary" type="submit" onclick="viewmodel">Add Grade</button>
+    </form>
+
+
+    <h2>Grades Display</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Course</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var grade in viewModel)
+            {
+                <tr>
+                    <td>@grade.Id</td>
+                    <td>@grade.Name</td>
+                    <td>@grade.Subject</td>
+                    <td>@grade.GradeAmount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    private GradesViewModel viewModel;
+    //TODO: Add input for new grade.
+
+    
+    protected override async Task OnInitializedAsync()
+    {
+        this.viewModel = new GradesViewModel();
+    }
+}
