@@ -14,5 +14,10 @@ namespace Server.Service
         {
             return GradesDal.AddGrade(gradeToAdd);
         }
+
+        public bool RemoveGrades()
+        {
+            return GradesDal.RemoveGrades();
+        }
     }
 }

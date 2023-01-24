@@ -33,5 +33,6 @@ namespace WinFormsClient.Endpoints
                 var _ = client.PostAsJsonAsync("Grades", grade).Result;
             }
         }
+
     }
 }

@@ -33,5 +33,11 @@ namespace WebApplication1.Controllers
         {
             return this.gradesService.AddGrade(gradeToAdd);
         }
+
+        [HttpDelete(Name = "DeleteGrades}")]
+        public bool Delete()
+        {
+            return this.gradesService.RemoveGrades();
+        }
     }
 }
