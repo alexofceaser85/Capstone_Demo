@@ -25,4 +25,10 @@
     <ProjectReference Include="..\WinFormsClient\WinFormsClient.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="WebClient\" />
+    <Folder Include="Server\" />
+    <Folder Include="WinFormsClient\Services\GradeService\" />
+  </ItemGroup>
+
 </Project>
