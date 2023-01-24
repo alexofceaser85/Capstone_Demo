@@ -15,7 +15,7 @@ namespace BlazorWinForms.Services
 
         public GradesService()
         {
-            this.grades = new List<Grade>();
+            this.GetGrades();
         }
 
         public List<Grade> GetGrades()
