@@ -13,12 +13,10 @@
 else
 {
     <h2>Add Grade</h2>
-    <form id="gradeForm" method="post">
-        <input asp- id="nameInput" type="text" name="name" placeholder="Student Name">
-        <input id="courseInput" type="text" name="course" placeholder="Course">
-        <input id="gradeAmountInput" type="number" name="gradeAmount" placeholder="Grade">
-        <button class="btn btn-primary" type="submit" onclick="viewmodel">Add Grade</button>
-    </form>
+    <input @bind="name" asp- id="nameInput" type="text" name="name" placeholder="Student Name">
+    <input @bind="course" id="courseInput" type="text" name="course" placeholder="Course">
+    <input @bind="gradeAmount" id="gradeAmountInput" type="number" name="gradeAmount" placeholder="Grade">
+    <button class="btn btn-primary" type="submit" @onclick="AddGrade">Add Grade</button>
 
 
     <h2>Grades Display</h2>
@@ -46,8 +44,17 @@ else
 }
 @code {
     private GradesViewModel viewModel;
-    //TODO: Add input for new grade.
-
+    private string name;
+    private string course;
+    private int gradeAmount;
+    
+    private async Task AddGrade()
+    {
+        viewModel.AddGrade(name, course, gradeAmount);
+        name = "";
+        course = "";
+        gradeAmount = 0;
+    }
     
     protected override async Task OnInitializedAsync()
     {
