@@ -9,7 +9,7 @@ using CapstoneDemo.Shared;
 namespace Tests.WinFormsClient.ViewModel.GradesViewModel
 {
     [TestFixture]
-    public class AddGradesTests
+    public class GetGradesTests
     {
         [SetUp]
         public void SetUp()
@@ -26,7 +26,7 @@ namespace Tests.WinFormsClient.ViewModel.GradesViewModel
         [TestCase("Alpha", "Math", 90)]
         [TestCase("Beta", "Computer Science", 20)]
         [TestCase("Charlie", "Physics", 80)]
-        public void AddSingleGrade(string name, string subject, int gradeAmount)
+        public void GetSingleGrade(string name, string subject, int gradeAmount)
         {
             global::WinFormsClient.ViewModel.GradesViewModel viewModel = new();
             viewModel.AddGrade(name, subject, gradeAmount);
