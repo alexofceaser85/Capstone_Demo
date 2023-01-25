@@ -14,6 +14,7 @@ EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{35E99C59-A4BF-4DAF-9E41-458BB7EC0DD2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{00B610AD-F026-4F3F-BB8D-4D5596887EA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWinForms", "BlazorWinForms\BlazorWinForms.csproj", "{DDB8461F-5FA0-4B01-86AA-4E9B2AE59BB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +48,10 @@ Global
 		{00B610AD-F026-4F3F-BB8D-4D5596887EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00B610AD-F026-4F3F-BB8D-4D5596887EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00B610AD-F026-4F3F-BB8D-4D5596887EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDB8461F-5FA0-4B01-86AA-4E9B2AE59BB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB8461F-5FA0-4B01-86AA-4E9B2AE59BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB8461F-5FA0-4B01-86AA-4E9B2AE59BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB8461F-5FA0-4B01-86AA-4E9B2AE59BB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
