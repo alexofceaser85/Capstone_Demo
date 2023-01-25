@@ -45,5 +45,15 @@ namespace Server.Dal
             command.Parameters.Add("@gradeAmount", SqlDbType.Int).Value = gradeToAdd.GradeAmount;
             return command.ExecuteNonQuery() > 0;
         }
+
+        public static bool RemoveGrades()
+        {
+            var query = "DELETE FROM [Grades]";
+            using var connection = new System.Data.SqlClient.SqlConnection(ApplicationData.SqlConnectionString);
+            connection.Open();
+
+            using var command = new System.Data.SqlClient.SqlCommand(query, connection);
+            return command.ExecuteNonQuery() > 0;
+        }
     }
 }

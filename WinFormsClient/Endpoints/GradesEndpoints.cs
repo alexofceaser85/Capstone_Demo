@@ -33,5 +33,17 @@ namespace WinFormsClient.Endpoints
                 var _ = client.PostAsJsonAsync("Grades", grade).Result;
             }
         }
+
+        public static void RemoveGrades()
+        {
+            //TODO Send the id in the DELETE request
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7113/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var _ = client.DeleteAsync($"Grades").Result;
+            }
+        }
     }
 }

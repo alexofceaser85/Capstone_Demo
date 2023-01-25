@@ -9,7 +9,7 @@ using Server.Service;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using ConfigurationManager = System.Configuration.ConfigurationManager;
 
-namespace WebApplication1.Controllers
+namespace Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -32,6 +32,12 @@ namespace WebApplication1.Controllers
         public bool Post(Grade gradeToAdd)
         {
             return this.gradesService.AddGrade(gradeToAdd);
+        }
+
+        [HttpDelete(Name = "DeleteGrades}")]
+        public bool Delete()
+        {
+            return this.gradesService.RemoveGrades();
         }
     }
 }
