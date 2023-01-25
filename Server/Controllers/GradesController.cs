@@ -9,7 +9,7 @@ using Server.Service;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using ConfigurationManager = System.Configuration.ConfigurationManager;
 
-namespace WebApplication1.Controllers
+namespace Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
