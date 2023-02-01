@@ -12,7 +12,6 @@ using ConfigurationManager = System.Configuration.ConfigurationManager;
 namespace Server.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     public class GradesController : ControllerBase
     {
         private readonly GradesService gradesService;
@@ -22,19 +21,22 @@ namespace Server.Controllers
             this.gradesService = new GradesService();
         }
 
-        [HttpGet(Name = "GetGrades")]
+        [HttpGet]
+        [Route("GetGrades")]
         public IEnumerable<Grade> Get()
         {
             return this.gradesService.GetGrades();
         }
 
-        [HttpPost(Name = "PostGrades")]
+        [HttpPost]
+        [Route("PostGrades")]
         public bool Post(Grade gradeToAdd)
         {
             return this.gradesService.AddGrade(gradeToAdd);
         }
 
-        [HttpDelete(Name = "DeleteGrades}")]
+        [HttpDelete]
+        [Route("DeleteGrades")]
         public bool Delete()
         {
             return this.gradesService.RemoveGrades();

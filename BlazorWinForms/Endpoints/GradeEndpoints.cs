@@ -15,7 +15,7 @@ public class GradeEndpoints
             client.BaseAddress = new Uri("https://localhost:7113/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            return client.GetFromJsonAsync<Grade[]>("Grades").Result;
+            return client.GetFromJsonAsync<Grade[]>("GetGrades").Result;
         }
     }
 
@@ -27,7 +27,7 @@ public class GradeEndpoints
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var grade = new Grade(null, gradeToAdd.Name, gradeToAdd.Subject, gradeToAdd.GradeAmount);
-            var _ = client.PostAsJsonAsync("Grades", grade).Result;
+            var _ = client.PostAsJsonAsync("PostGrades", grade).Result;
         }
     }
 }

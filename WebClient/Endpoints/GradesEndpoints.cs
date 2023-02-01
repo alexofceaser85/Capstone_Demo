@@ -13,7 +13,7 @@ namespace WebClient.Endpoints
                 client.BaseAddress = new Uri("https://localhost:7113/");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                return client.GetFromJsonAsync<Grade[]>("Grades").Result;
+                return client.GetFromJsonAsync<Grade[]>("GetGrades").Result;
             }
         }
 
@@ -25,7 +25,7 @@ namespace WebClient.Endpoints
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 var grade = new CapstoneDemo.Shared.Grade(null, gradeToAdd.Name, gradeToAdd.Subject, int.Parse(gradeToAdd.GradeAmount));
-                var _ = client.PostAsJsonAsync("Grades", grade).Result;
+                var _ = client.PostAsJsonAsync("GetGrades", grade).Result;
             }
         } 
     }
